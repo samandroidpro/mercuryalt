@@ -919,9 +919,9 @@ function Library:create(options)
 
 	rawset(mt, "creditsContainer", creditsTab.container)
 
-	creditsTab:credit{Name = "Abstract", Description = "UI Library Developer", Discord = "Abstract#8007", V3rmillion = "AbstractPoo"}
-	creditsTab:credit{Name = "Deity", Description = "UI Library Developer", Discord = "Deity#0228", V3rmillion = "0xDEITY"}
-	creditsTab:credit{Name = "TheRealChicken", Description = "Game Script Developer", Discord = "TheRealChicken#5230", V3rmillion = "TheRealChick"}
+	creditsTab:credit{Name = "Abstract", Description = "UI Library Developer", Discord = "Abstract#8007", V3rmillion = "https://v3rmillion.net/member.php?action=profile&uid=1055020"}
+	creditsTab:credit{Name = "Deity", Description = "UI Library Developer", Discord = "Deity#0228", V3rmillion = "https://v3rmillion.net/member.php?action=profile&uid=2291403"}
+	creditsTab:credit{Name = "TheRealChicken", Description = "Game Script Developer", Discord = "TheRealChicken#5230", V3rmillion = "https://v3rmillion.net/member.php?action=profile&uid=1732464"}
 
 	return mt
 end
