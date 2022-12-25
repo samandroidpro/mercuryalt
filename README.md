@@ -885,7 +885,7 @@ function Library:create(options)
 	settingsTab:keybind{
 		Name = "Toggle Key",
 		Description = "Key to show/hide the UI.",
-		Keybind = Enum.KeyCode.RightAlt,
+		Keybind = Enum.KeyCode.Delete,
 		Callback = function()
 			self.Toggled = not self.Toggled
 			Library:show(self.Toggled)
@@ -921,6 +921,7 @@ function Library:create(options)
 
 	creditsTab:credit{Name = "Abstract", Description = "UI Library Developer", Discord = "Abstract#8007", V3rmillion = "AbstractPoo"}
 	creditsTab:credit{Name = "Deity", Description = "UI Library Developer", Discord = "Deity#0228", V3rmillion = "0xDEITY"}
+	creditsTab:credit{Name = "TheRealChicken", Description = "Game Script Developer", Discord = "TheRealChicken#5230", V3rmillion = "TheRealChick"}
 
 	return mt
 end
@@ -1291,8 +1292,6 @@ function Library:toggle(options)
 		Callback = function(state) end
 	}, options)
 
-	if options.StartingState then options.Callback(true) end
-
 	local toggleContainer = self.container:object("TextButton", {
 		Theme = {BackgroundColor3 = "Secondary"},
 		Size = UDim2.new(1, -20, 0, 52)
@@ -1400,8 +1399,10 @@ function Library:toggle(options)
 		else
 			onIcon:crossfade(offIcon, 0.1)
 		end
-		options.Callback(toggled)
+		task.spawn(function() options.Callback(toggled) end)
 	end
+	
+	if options.StartingState then methods:SetState(true) end
 
 	return methods
 end
